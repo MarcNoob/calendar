@@ -82,26 +82,12 @@
 		durationEditable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(dat) {
-      	let tututu = moment("2000-01-02T00:00:00");
-      	//alert(dat.prototype.toString);
-		 //let zz=dateconv('ee');
-		 toto(vartype(tututu));
-		 alert(tututu);		  
-		  var end=Date.parse(dat.format())+60*60*24*1000;
-		  end = new Date(end);
-		//  alert(typevar(end));
-		  alert(end.toISOString().substring(0,19));
-		  		  // test ajout drop
-		  end = $.fullCalendar.moment.utc(end.toISOString().substring(0,19));
-		  toto(vartype(end));
-		//	alert(typevar(end));
-		  //end = String.concat(end,' 00:00:00 GMT+0000');
-		  //end = end.toDateString();
-		  alert(end);
-		  //alert (String.concat(dat,end));
-		  //alert(typeof end);
+		  var end = moment(dat);
+		  end.add(24,'h');
 			dat = $.fullCalendar.formatDate(dat, "YYYY-MM-DD HH:mm:ss");
+			alert(dat);
  			end = $.fullCalendar.formatDate(end, "YYYY-MM-DD HH:mm:ss");
+ 			alert(end);
 		  //alert ('title='+ this.innerHTML +'&start='+ dat +'&end='+ end);
 			 $.ajax({
 			 url: 'php/add_events.php',

@@ -15,10 +15,3 @@ let tvar = '';
 }
 
 
-function dateconv(datein, typeout) {
-	return typeof datein;
-}
-
-function toto(uu) {
-	alert (uu);
-}
